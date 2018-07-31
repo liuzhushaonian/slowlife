@@ -1,7 +1,6 @@
 package com.slowlife.utils;
 
 import com.blade.mvc.RouteContext;
-import com.blade.mvc.hook.Signature;
 import com.blade.mvc.hook.WebHook;
 
 public class AllowCrossOriginHook implements WebHook {

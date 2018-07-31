@@ -20,9 +20,30 @@ public class Commodity extends Model {
 
     private String shelfTime;
 
-    private String merchentPicture;
+    private String commodityPicture;
 
     private Integer totalSalesValume;
+
+    private int CommodityStatus=1;//上架或下架 上架是1，下架是-1
+
+    private int commodityMerchant;
+
+
+    public int getCommodityMerchant() {
+        return commodityMerchant;
+    }
+
+    public void setCommodityMerchant(int commodityMerchant) {
+        this.commodityMerchant = commodityMerchant;
+    }
+
+    public int getCommodityStatus() {
+        return CommodityStatus;
+    }
+
+    public void setCommodityStatus(int commodityStatus) {
+        CommodityStatus = commodityStatus;
+    }
 
     public Integer getCommodityNumber() {
         return commodityNumber;
@@ -80,13 +101,6 @@ public class Commodity extends Model {
         this.shelfTime = shelfTime;
     }
 
-    public String getMerchentPicture() {
-        return merchentPicture;
-    }
-
-    public void setMerchentPicture(String merchentPicture) {
-        this.merchentPicture = merchentPicture;
-    }
 
     public Integer getTotalSalesValume() {
         return totalSalesValume;
@@ -94,5 +108,13 @@ public class Commodity extends Model {
 
     public void setTotalSalesValume(Integer totalSalesValume) {
         this.totalSalesValume = totalSalesValume;
+    }
+
+    public String getCommodityPicture() {
+        return commodityPicture;
+    }
+
+    public void setCommodityPicture(String commodityPicture) {
+        this.commodityPicture = commodityPicture;
     }
 }

@@ -27,6 +27,8 @@ public class IndexController {
 
 //        System.out.println(keyword);
 
+//        return service.search(keyword);
+
         response.json(service.search(keyword));
 
     }
@@ -51,5 +53,8 @@ public class IndexController {
 
         return "sss.html";
     }
+
+
+
 
 }

@@ -52,11 +52,36 @@ public class OrderController {
     @GetRoute("/v1/create-order")
     public void createOrder(@Param String orderData, Response response){
 
-        System.out.println("json------->>>>"+orderData);
-
         response.json(service.createOrder(orderData));
 
     }
+
+
+    @GetRoute("v1/get-order-by-id")
+    public void getOrderById(@Param String data,Response response){
+
+        response.json(service.getOrderById(data));
+
+    }
+
+
+    @GetRoute("v1/get-all-to-be-processed-order")
+    public void getAllToBeProcessedOrder(@Param String data,Response response){
+
+        response.json(service.getAllToBeProcessedOrder(data));
+
+
+    }
+
+
+    @GetRoute("v1/update-order-info")
+    public void updateOrderInfo(@Param String data,Response response){
+
+        response.json(service.updateOrderInfo(data));
+
+    }
+
+
 
 
 }

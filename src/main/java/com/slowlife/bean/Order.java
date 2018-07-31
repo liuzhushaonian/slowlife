@@ -11,13 +11,16 @@ public class Order extends Model {
 
     private String orderNumber;
     private int orderId;
-//    private int merchentNumber;
+    private int merchantNumber;
     private int userNumber;
     private int commodityNumber;
     private int commodityQuantity;
     private float commodityPrice;
     private String commodityName;
     private String addressNumber;
+    private String orderDate;
+
+
 
     @Ignore
     public static final int COMPLETE=10;
@@ -28,13 +31,16 @@ public class Order extends Model {
     @Ignore
     public static final int PENDING_REFUND=40;
 
+    @Ignore
+    public static final int REFUNDED=50;
+
 
 
 
 
     /**
-     * 分为五种，分别是已完成、待处理、已处理、待退款
-     * 对应0x0010,0x0020,0x0030x0x0040
+     * 分为五种，分别是已完成、待处理、已处理、待退款、已退款
+     * 对应10,20,30,40,50
      */
     private int orderStatus;
 
@@ -54,14 +60,21 @@ public class Order extends Model {
         this.orderId = orderId;
     }
 
-//    public int getMerchentNumber() {
-//        return merchentNumber;
-//    }
-//
-//    public void setMerchentNumber(int merchentNumber) {
-//        this.merchentNumber = merchentNumber;
-//    }
+    public int getMerchantNumber() {
+        return merchantNumber;
+    }
 
+    public void setMerchantNumber(int merchantNumber) {
+        this.merchantNumber = merchantNumber;
+    }
+
+    public String getOrderDate() {
+        return orderDate;
+    }
+
+    public void setOrderDate(String orderDate) {
+        this.orderDate = orderDate;
+    }
 
     public String getOrderNumber() {
         return orderNumber;

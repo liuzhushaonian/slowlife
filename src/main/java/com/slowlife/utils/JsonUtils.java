@@ -12,7 +12,7 @@ public class JsonUtils {
 
         JSONObject jsonObject=new JSONObject();
 
-        jsonObject.put("msg",message);
+        jsonObject.put(Conf.MSG,message);
 
         return jsonObject;
     }

@@ -2,11 +2,10 @@ package com.slowlife.service;
 
 import com.blade.ioc.annotation.Bean;
 import com.slowlife.bean.Commodity;
-import com.slowlife.bean.Merchent;
+import com.slowlife.bean.Merchant;
 import com.slowlife.service.interfaces.IndexInterface;
 import com.slowlife.utils.JsonUtils;
 import io.github.biezhi.anima.Anima;
-import io.github.biezhi.anima.core.functions.TypeFunction;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -18,19 +17,19 @@ public class IndexService implements IndexInterface {
 
     /**
      * 首页信息
-     *
+     * 返回商家信息
      * @return
      */
     @Override
     public String indexInfo() {
 
-        List<Merchent> merchentList=Anima.select("merchent_number,merchent_name,commodity_quantity,merchent_picture").from(Merchent.class).all();
+        Merchant merchant =Anima.select("merchant_number,merchant_name,commodity_quantity,merchant_picture").from(Merchant.class).one();
 
         JSONObject jsonObject=JsonUtils.getJsonObject("success");
 
-        JSONArray jsonArray=new JSONArray(merchentList);
+        JSONObject jsonObject1=new JSONObject(merchant);
 
-        jsonObject.put("result",jsonArray);
+        jsonObject.put("result",jsonObject1);
 
 
         return jsonObject.toString();

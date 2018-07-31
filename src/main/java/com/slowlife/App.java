@@ -18,7 +18,7 @@ public class App {
 
 //        Blade.me().get("/",((request, response) -> response.text("Hello World"))).addStatics("/templates").start(App.class,args);
 
-        Blade.of().use(new AllowCrossOriginHook()).addStatics("/templates")
+        Blade.of().use(new AllowCrossOriginHook()).addStatics("/templates").addStatics("/upload/")
                 .get("/",(routeContext -> routeContext.response().text("Hello World")))
                 .start(App.class,args);
 
